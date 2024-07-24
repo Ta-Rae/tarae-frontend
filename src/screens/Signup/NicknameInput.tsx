@@ -1,6 +1,7 @@
 import {FC, useState} from "react";
 import LoginHeader from "../../components/LoginHeader";
 import CancelIcon from '../../assets/input_cancel.svg';
+import NextButton from "./components/NextButton";
 
 
 const NicknameInputScreen: FC = () => {
@@ -30,21 +31,17 @@ const NicknameInputScreen: FC = () => {
                 <img
                     className={(isNicknameValid(nickname)) ?
                         ('absolute translate-x-[178px] translate-y-[-4px]') : ('hidden')}
+                    onClick={() => setNickname(null)}
                     src={CancelIcon}
                     alt='취소'
                 />
             </div>
-            <div className='flex justify-center items-center'>
-                <button
-                    disabled={!isNicknameValid(nickname)}
-                    className='w-[397px] h-[63px] rounded-[22px]
-                            absolute bottom-0 translate-y-[-63px]
-                            font-pre font-bold text-[22px]
-                            bg-[#242933] text-white disabled:bg-button-disabled disabled:text-text-disabled'
-                >
-                    다음
-                </button>
-            </div>
+            <NextButton
+                disabled={!isNicknameValid(nickname)}
+                buttonText={'다음'}
+                onClick={() => {}}
+                moveTo='/register/country'
+            />
         </div>
     );
 }

@@ -8,6 +8,9 @@
     .background {
         @apply flex h-screen flex-col;
     }
+    .login-button {
+        @apply flex flex-row justify-center items-center w-[397px] h-[74px] rounded-[28px] font-pre font-bold text-black text-[22px];
+    }
 }
 
 @font-face {
